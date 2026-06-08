@@ -1,0 +1,52 @@
+{
+  "plugin_id": "silo.requests.seerr",
+  "version": "0.1.0",
+  "checksum": "__CHECKSUM__",
+  "silo_api_version": "v1",
+  "supported_platforms": [
+    {"os": "linux", "arch": "amd64"},
+    {"os": "linux", "arch": "arm64"},
+    {"os": "darwin", "arch": "arm64"}
+  ],
+  "global_config_schema": [],
+  "capabilities": [
+    {
+      "type": "request_router.v1",
+      "id": "seerr",
+      "display_name": "Seerr",
+      "description": "Fulfill content requests through a Seerr (Overseerr/Jellyseerr) instance.",
+      "config_schema": [
+        {
+          "key": "connection",
+          "title": "Seerr",
+          "json_schema": "{\"type\":\"object\",\"properties\":{\"supports_4k\":{\"type\":\"boolean\"},\"requester_mode\":{\"type\":\"string\"},\"auto_approve\":{\"type\":\"boolean\"},\"require_mapped_user\":{\"type\":\"boolean\"}}}",
+          "admin_form": {
+            "submit_label": "Save connection",
+            "fields": [
+              {
+                "key": "supports_4k",
+                "label": "This Seerr handles 4K requests",
+                "control": "ADMIN_FORM_CONTROL_SWITCH",
+                "default_value": false,
+                "description": "Enable only if the Seerr instance has a 4K Sonarr/Radarr configured. When off, 2160p requests are not sent to this connection."
+              },
+              {
+                "key": "requester_mode",
+                "label": "Attribute requests to",
+                "control": "ADMIN_FORM_CONTROL_SELECT",
+                "default_value": "admin",
+                "description": "Admin user: all requests come from the API-key owner (auto-approved). Map to Silo users: attribute each request to the Seerr user matching the requester's email (created if missing).",
+                "options": [
+                  { "value": "admin", "label": "Admin user (API key owner)" },
+                  { "value": "mapped", "label": "Map to Silo users" }
+                ]
+              },
+              { "key": "auto_approve",   "label": "Auto-approve requests", "control": "ADMIN_FORM_CONTROL_SWITCH", "default_value": true, "description": "Mapped users' requests are auto-approved. Off: they land in Seerr's per-user approval queue.", "show_when": [{ "field": "requester_mode", "equals": ["mapped"] }] },
+              { "key": "require_mapped_user", "label": "Fail the request if the user can't be mapped", "control": "ADMIN_FORM_CONTROL_SWITCH", "default_value": false, "description": "On: a request whose Silo user can't be matched/created on Seerr fails instead of being submitted under the admin.", "show_when": [{ "field": "requester_mode", "equals": ["mapped"] }] }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
