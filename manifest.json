@@ -3,6 +3,19 @@
   "version": "0.1.0",
   "checksum": "__CHECKSUM__",
   "silo_api_version": "v1",
+  "presentation": {
+    "display_name": "Seerr Requests",
+    "summary": "Submit Silo movie and series requests through a Seerr-compatible server.",
+    "description_markdown": "Connects Silo to Seerr, including Jellyseerr and Overseerr-compatible deployments. Seerr continues to manage its own Sonarr and Radarr services while the plugin maps Silo request identities, HD and 4K intent, and request status.",
+    "setup_markdown": "Install the plugin and add a Seerr connection in Silo with its base URL and an API key owned by a Seerr administrator or auto-approve user. Choose whether the connection handles 4K and whether requests should be attributed to the API-key owner or mapped to Silo users by email.",
+    "homepage_url": "https://github.com/seerr-team/seerr",
+    "source_url": "https://github.com/Silo-Community/silo-plugins-requests-seerr",
+    "support_url": "https://github.com/Silo-Community/silo-plugins-requests-seerr/issues",
+    "changelog_url": "https://github.com/Silo-Community/silo-plugins-requests-seerr/releases",
+    "publisher_name": "Silo Community",
+    "publisher_url": "https://github.com/Silo-Community",
+    "license_spdx": "AGPL-3.0-only"
+  },
   "supported_platforms": [
     {
       "os": "linux",
