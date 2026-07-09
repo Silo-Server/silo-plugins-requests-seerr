@@ -1,4 +1,4 @@
-# silo-plugin-requests-seerr
+# Silo Requests: Seerr
 
 A Silo `request_router.v1` plugin that fulfills content requests by submitting
 them to a [Seerr](https://github.com/seerr-team/seerr) (Overseerr/Jellyseerr-
@@ -38,5 +38,18 @@ invalid key.
 go build ./... && go test ./...
 ```
 
-This module uses a local SDK `replace` (`=> /opt/silo-plugin-sdk`) for
-development; swap it for a published version before release.
+## Community maintenance
+
+This is an approved community plugin maintained in the
+[`Silo-Community`](https://github.com/Silo-Community) organization. Use
+[GitHub Issues](https://github.com/Silo-Community/silo-plugins-requests-seerr/issues)
+for support and bug reports. Security reports should follow
+[`SECURITY.md`](SECURITY.md).
+
+The plugin consumes the published
+[`silo-plugin-sdk`](https://github.com/Silo-Server/silo-plugin-sdk); CI rejects
+machine-local SDK replacement directives.
+
+## License
+
+Licensed under AGPL-3.0. See [`LICENSE`](LICENSE).

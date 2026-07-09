@@ -1,4 +1,4 @@
-module github.com/Silo-Server/silo-plugins-requests-seerr
+module github.com/Silo-Community/silo-plugins-requests-seerr
 
 go 1.26.3
 

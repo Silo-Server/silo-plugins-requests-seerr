@@ -15,7 +15,7 @@ import (
 	pluginv1 "github.com/Silo-Server/silo-plugin-sdk/pkg/pluginproto/silo/plugin/v1"
 	"github.com/Silo-Server/silo-plugin-sdk/pkg/pluginsdk/httpclient"
 
-	"github.com/Silo-Server/silo-plugins-requests-seerr/internal/seerr"
+	"github.com/Silo-Community/silo-plugins-requests-seerr/internal/seerr"
 )
 
 // Server implements the request_router.v1 RPCs. It is stateless.
