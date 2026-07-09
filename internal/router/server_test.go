@@ -11,7 +11,7 @@ import (
 	pluginv1 "github.com/Silo-Server/silo-plugin-sdk/pkg/pluginproto/silo/plugin/v1"
 	"google.golang.org/protobuf/types/known/structpb"
 
-	"github.com/Silo-Server/silo-plugins-requests-seerr/internal/seerr"
+	"github.com/Silo-Community/silo-plugins-requests-seerr/internal/seerr"
 )
 
 // seerrStub records POST bodies and serves canned create responses.
